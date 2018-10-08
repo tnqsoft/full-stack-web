@@ -1,0 +1,37 @@
+<!-- login-form.html -->
+<!-- The <template> tag is new in HTML5. -->
+<template id="login-form-template">
+    <style>
+        input {
+            border: 1px solid grey;
+            color: blue;
+        }
+    </style>
+
+    <!-- Rest of template DOM -->
+    <p>
+        Login: <input type="text">
+        Password: <input type="password">
+        <button type="button">Login</button>
+    </p>
+</template>
+
+<script>
+    (function() {
+        const doc = (document._currentScript || document.currentScript).ownerDocument;
+        const template = doc.querySelector('#login-form-template');
+
+        customElements.define('login-form', class extends HTMLElement {
+            constructor() {
+                super();
+            }
+
+            // Without the shadow DOM, we have to manipulate the custom element
+            // after it has been inserted in the DOM.
+            connectedCallback() {
+                const temp = document.importNode(template.content, true);
+                this.appendChild(temp);
+            }
+        });
+    })();
+</script>
