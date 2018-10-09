@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shadow DOM - Demo 1</title>
+</head>
+<body>
+
+<h1>Shadow DOM DEMO</h1>
+
+<p>1. Paragraph out side Shadow, and at the main page</p>
+<p>2. <button id="btn1">Button 1</button></p>
+
+<script>
+    (function() {
+        // Can not effective to shadow element
+        document.addEventListener('click', function(e) {
+            console.log(e.target.id + ' clicked!');
+        });
+    })();
+</script>
+
+<!-- ================================================== -->
+
+<div id="welcomeMessage"></div>
+
+<script>
+    (function() {
+        var host = document.querySelector('#welcomeMessage');
+        var root = host.createShadowRoot({mode: 'open'});
+        root.innerHTML = '<p>3. Hello Shadow DOM World</p>';
+    })();
+</script>
+
+<!-- ================================================== -->
+
+<div id="box1"></div>
+
+<template id="box1-template">
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+
+    <p>4. Fullname: Nguyen Nhu Tuan</p>
+    <p>5. Email: tuanquynh0508@gmail.com</p>
+    <p>6. <button id="btn2">Button 2</button></p>
+</template>
+
+<script>
+    (function() {
+        const template = document.querySelector('#box1-template');
+
+        var host = document.querySelector('#box1');
+        // var root = host.createShadowRoot({mode: 'open'});
+        let root = host.attachShadow({
+            mode: 'open'
+            // mode: 'closed'
+        });
+        // root.innerHTML = template.innerHTML;
+        root.appendChild(template.content.cloneNode(true));
+        template.remove();
+
+        // Debugging: check open | closed
+        // console.log(host.shadowRoot);
+        root.addEventListener('click', function(e) {
+            console.log(e.target.id + ' clicked!');
+        });
+    })();
+</script>
+
+<!-- ================================================== -->
+
+<div id="box2">
+    <h2 slot="title">Card Title Here</h2>
+    <div>
+        <p>Body Card Content</p>
+    </div>
+</div>
+
+<template id="box2-template">
+    <style>
+        .custom-card {
+            border: 1px solid #dcdcdc;
+            width: 400px;
+        }
+        .custom-card-head {
+            background-color: #999;
+        }
+        .custom-card-body {
+            padding: 10px;
+        }
+        [name="title"]::slotted(h2) {
+            margin: 0;
+            padding: 5px;
+            font-family: sans-serif;
+            font-size: 18px;
+            color: white;
+        }
+        :host(.card-primary) .custom-card-head {
+            background-color: blue;
+        }
+        :host(.card-info) .custom-card-head {
+            background-color: cyan;
+        }
+        :host(.card-success) .custom-card-head {
+            background-color: green;
+        }
+        :host(.card-warning) .custom-card-head {
+            background-color: orange;
+        }
+        :host(.card-danger) .custom-card-head {
+            background-color: red;
+        }
+    </style>
+
+    <div class="custom-card">
+        <div class="custom-card-head"><slot name="title"></slot></div>
+        <div class="custom-card-body"><slot></slot></div>
+    </div>
+</template>
+
+<script>
+    (function() {
+        const template = document.querySelector('#box2-template');
+
+        var host = document.querySelector('#box2');
+        // var root = host.createShadowRoot({mode: 'open'});
+        let root = host.attachShadow({
+            mode: 'open'
+            // mode: 'closed'
+        });
+        // root.innerHTML = template.innerHTML;
+        root.appendChild(template.content.cloneNode(true));
+        template.remove();
+    })();
+</script>
+
+<!-- ================================================== -->
+
+<style>
+    /* Not effective to shadow element */
+    #box1 p {
+        color: blue;
+    }
+</style>
+
+</body>
+</html>

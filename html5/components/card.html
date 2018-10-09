@@ -1,0 +1,96 @@
+<template id="card-template">
+    <style>
+        .custom-card {
+            border: 1px solid #dcdcdc;
+            width: 400px;
+            margin-bottom: 10px;
+        }
+
+        .custom-card-head {
+            background-color: #999;
+        }
+
+        .custom-card-body {
+            padding: 10px;
+        }
+
+        [name="title"]::slotted(h2) {
+            margin: 0;
+            padding: 5px;
+            font-family: sans-serif;
+            font-size: 18px;
+            color: white;
+        }
+
+        /* THEMES */
+        /* PRIMARY */
+        :host(.card-primary) .custom-card {
+            border-color: blue;
+        }
+        :host(.card-primary) .custom-card-head {
+            background-color: blue;
+        }
+
+        /* INFO */
+        :host(.card-info) .custom-card {
+            border-color: cyan;
+        }
+        :host(.card-info) .custom-card-head {
+            background-color: cyan;
+        }
+
+        /* SUCCESS */
+        :host(.card-success) .custom-card {
+            border-color: green;
+        }
+        :host(.card-success) .custom-card-head {
+            background-color: green;
+        }
+
+        /* WARNING */
+        :host(.card-warning) .custom-card {
+            border-color: orange;
+        }
+        :host(.card-warning) .custom-card-head {
+            background-color: orange;
+        }
+
+        /* DANGER */
+        :host(.card-danger) .custom-card {
+            border-color: red;
+        }
+        :host(.card-danger) .custom-card-head {
+            background-color: red;
+        }
+    </style>
+
+    <div class="custom-card">
+        <div class="custom-card-head">
+            <slot name="title"></slot>
+        </div>
+        <div class="custom-card-body">
+            <slot></slot>
+        </div>
+    </div>
+</template>
+
+<script>
+    class CustomCard extends HTMLElement {
+        constructor() {
+            // Always call super first in constructor
+            super();
+
+            const doc = (document._currentScript || document.currentScript).ownerDocument;
+
+            // Get Template
+            const template = doc.querySelector('#card-template');
+
+            // Create a shadow root
+            const shadow = this.attachShadow({mode: 'open'});
+
+            // Append it to the shadow root
+            shadow.appendChild(template.content.cloneNode(true));
+        }
+    }
+    window.customElements.define('custom-card', CustomCard);
+</script>
