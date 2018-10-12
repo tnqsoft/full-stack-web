@@ -95,6 +95,21 @@ class LoginForm extends HTMLElement {
 
         // Append it to the shadow root
         shadow.appendChild(document.createRange().createContextualFragment(template));
+
+        let btn = shadow.querySelector('button');
+        let inputUsername = shadow.querySelector('input[type="text"]');
+        let inputPassword = shadow.querySelector('input[type="password"]');
+        let _self = this;
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            let mess = 'Login with username "' + inputUsername.value + '" and password "' + inputPassword.value + '"';
+            console.log(mess);
+            _self.dispatchEvent(new CustomEvent('on-login-success', {
+                detail: {
+                    message: mess
+                }
+            }));
+        });
     }
 }
 window.customElements.define('login-form', LoginForm);

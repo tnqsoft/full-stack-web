@@ -15,5 +15,12 @@
     </div>
 </login-form>
 
+<script>
+    var comLogin = document.querySelector('login-form');
+    comLogin.addEventListener('on-login-success', function(e) {
+        alert(e.detail.message);
+    });
+</script>
+
 </body>
 </html>

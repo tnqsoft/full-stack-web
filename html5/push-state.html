@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Push State Demo</title>
+</head>
+<body>
+<p><a href="#target">Hello HashState</a></p>
+<p><button type="button" class="link-pushstate" data-page="page1.html">Demo PushState Page 1</button></p>
+<p><button type="button" class="link-pushstate" data-page="page2.html">Demo PushState Page 2</button></p>
+<script>
+    let links = document.querySelectorAll('.link-pushstate');
+
+    for (let link of links) {
+        link.addEventListener('click', function(e){
+            e.preventDefault();
+            history.pushState(null, null, '/' + this.getAttribute('data-page'));
+        });
+    }
+
+    window.onpopstate = function(event) {
+        alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+    };
+</script>
+</body>
+</html>
