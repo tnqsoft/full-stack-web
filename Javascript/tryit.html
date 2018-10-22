@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="libs/codemirror.css">
+    <script src="libs/codemirror.js"></script>
+    <style>
+        body {
+            padding: 30px;
+            background-color: #000;
+        }
+        textarea {
+            height: 400px;
+        }
+        iframe {
+            height: 400px;
+            background-color: #fff;
+            border: 1px solid #dcdcdc;
+        }
+        #logDisplay {
+            margin-top: 10px;
+            height: 150px;
+            overflow-y: auto;
+        }
+        #logDisplay p {
+            margin: 0px;
+            line-height: 18px;
+            color: yellow;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<form action="tryit-result.php" method="post" target="targetCode">
+    <div class="row">
+        <div class="col-6 text-left">
+            <button type="submit" class="btn btn-primary">Try It</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <textarea id="inputSource" class="embed-responsive" name="code"></textarea>
+        </div>
+        <div class="col-6 result-box">
+            <iframe name="targetCode" id="targetCode" class="embed-responsive"></iframe>
+        </div>
+    </div>
+    <div id="logDisplay" class="embed-responsive"></div>
+</form>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="libs/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="libs/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="libs/bootstrap/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+    function displayLog(str) {
+        if (typeof str === 'string') {
+            $('#logDisplay').prepend('<p>' + str + '</p>');
+        }
+    }
+
+    $('button[type="submit"]').click(function(e){
+        e.preventDefault();
+        $('.result-box').html('<iframe name="targetCode" id="targetCode" class="embed-responsive"></iframe>');
+        $('form').submit();
+    });
+
+    // define a new console
+    var console = (function(oldCons){
+        return {
+            log: function(text){
+                oldCons.log(text);
+                displayLog(text);
+            },
+            info: function (text) {
+                oldCons.info(text);
+                displayLog(text);
+            },
+            warn: function (text) {
+                oldCons.warn(text);
+                displayLog(text);
+            },
+            error: function (text) {
+                oldCons.error(text);
+                displayLog(text);
+            }
+        };
+    }(window.console));
+
+    //Then redefine the old console
+    window.console = console;
+</script>
+
+</body>
+</html>
