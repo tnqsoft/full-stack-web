@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Variables</title>
+</head>
+<body>
+    <h1>Javascript - var, const, let</h1>
+    <p>
+        <button type="button" onclick="testLet1();">Test Var</button>
+        <button type="button" onclick="testLet2();">Test Let</button>
+    </p>
+    <script>
+        var name = 'Tuan';
+        var age = 34, sex = 'Male';
+
+        const PI = 3.14;
+
+        let phone = '11111111111111';
+
+        // const PI = 3.14;
+
+        const list = [
+            {
+                id: 1,
+                value: 'Test 1'
+            },
+            {
+                id: 2,
+                value: 'Test 2'
+            },
+            {
+                id: 3,
+                value: 'Test 3'
+            }
+        ];
+
+        //--------------------------------------------------------------
+        function displayName() {
+            // const PI = 3.15;
+            parent.console.log('displayName - name: ' + name);
+            parent.console.log('displayName - PI: ' + PI);
+            parent.console.log('displayName - phone: ' + phone);
+        }
+
+        function testLet1() {
+            for (var item of list) {
+                parent.console.log(item.id + ' - ' + item.value);
+            }
+            parent.console.log(item.id + ' - ' + item.value);
+        }
+
+        function testLet2() {
+            for (let item2 of list) {
+                parent.console.log(item2.id + ' - ' + item2.value);
+            }
+            parent.console.log(item2.id + ' - ' + item2.value);
+        }
+        //---------------------------------------------------------------
+
+        displayName();
+    </script>
+</body>
+</html>

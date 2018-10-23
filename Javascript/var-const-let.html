@@ -2,21 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Javascript - Variables</title>
+    <title>Javascript - Loop</title>
 </head>
 <body>
+    <h1>Javascript - loop</h1>
     <script>
-        var name = 'Tuan';
-        var age = 34, sex = 'Male';
+        const list = [
+            {
+                id: 1,
+                value: 'Test 1'
+            },
+            {
+                id: 2,
+                value: 'Test 2'
+            },
+            {
+                id: 3,
+                value: 'Test 3'
+            }
+        ];
 
-        const PI = 3.14;
-
-        //--------------------------------------------------------------
-        function displayName() {
-            parent.console.log('displayName: ' + name);
+        for (let i=0; i < list.length; i++) {
+            parent.console.log(list[i].id + ' - ' + list[i].value);
         }
+        parent.console.log('---------------------------------------------------');
 
-        displayName();
+        for (let item in list) {
+            parent.console.log(list[item].id + ' - ' + list[item].value);
+        }
+        parent.console.log('---------------------------------------------------');
+
+        for (let item of list) {
+            parent.console.log(item.id + ' - ' + item.value);
+        }
+        parent.console.log('---------------------------------------------------');
+
+        let i = 0;
+        while (i < list.length) {
+            parent.console.log(list[i].id + ' - ' + list[i].value);
+            i++;
+        }
+        parent.console.log('---------------------------------------------------');
+
+        i = 0;
+        do {
+            parent.console.log(list[i].id + ' - ' + list[i].value);
+            i++;
+        }
+        while (i < list.length);
     </script>
 </body>
 </html>
