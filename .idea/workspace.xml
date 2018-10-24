@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="831953f1-cef2-4941-902d-a96eb8ce90e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javascript/libs/codemirror.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javascript/libs/codemirror.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Javascript/tryit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javascript/tryit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javascript/var-const-let.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javascript/var-const-let.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,38 +15,38 @@
     <session id="533129701">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="41" />
+          <entry key="html" value="49" />
           <entry key="js" value="11" />
-          <entry key="php" value="1" />
+          <entry key="php" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="41" />
+          <entry key="HTML" value="49" />
           <entry key="JavaScript" value="11" />
-          <entry key="PHP" value="1" />
+          <entry key="PHP" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="3562" />
+          <entry key="html" value="3887" />
           <entry key="js" value="881" />
           <entry key="php" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3666" />
+          <entry key="HTML" value="3991" />
           <entry key="JavaScript" value="777" />
           <entry key="PHP" value="77" />
         </counts>
@@ -93,12 +90,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Javascript/var-const-let.html">
+        <entry file="file://$PROJECT_DIR$/Javascript/async-await.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="784">
-              <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+            <state relative-caret-position="171">
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -152,8 +149,11 @@
         <option value="$PROJECT_DIR$/Javascript/es6-demo.html" />
         <option value="$PROJECT_DIR$/Javascript/tryid.html" />
         <option value="$PROJECT_DIR$/Javascript/tryit-result.php" />
-        <option value="$PROJECT_DIR$/Javascript/tryit.html" />
         <option value="$PROJECT_DIR$/Javascript/var-const-let.html" />
+        <option value="$PROJECT_DIR$/Javascript/tryit.html" />
+        <option value="$PROJECT_DIR$/Javascript/arrow-func.html" />
+        <option value="$PROJECT_DIR$/Javascript/array-func.html" />
+        <option value="$PROJECT_DIR$/Javascript/async-await.html" />
       </list>
     </option>
   </component>
@@ -183,7 +183,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,6 +210,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -256,18 +256,19 @@
       <workItem from="1540179002711" duration="5210000" />
       <workItem from="1540262001737" duration="647000" />
       <workItem from="1540283413824" duration="1474000" />
-      <workItem from="1540285250827" duration="4186000" />
+      <workItem from="1540285250827" duration="5108000" />
+      <workItem from="1540369289605" duration="2350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34880000" />
+    <option name="totallyTimeSpent" value="38152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1504" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27086788" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27418464" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -443,13 +444,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Javascript/index.html" />
-    <entry file="file://$PROJECT_DIR$/Javascript/tryit-result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Javascript/libs/codemirror/mode/htmlmixed/htmlmixed.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="727">
@@ -460,17 +454,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Javascript/loop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Javascript/tryit-result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Javascript/tryit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="96" column="35" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+        <state relative-caret-position="328">
+          <caret line="93" column="8" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Javascript/var-const-let.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
-          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+        <state relative-caret-position="171">
+          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Javascript/arrow-func.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Javascript/array-func.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Javascript/async-await.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
         </state>
       </provider>
     </entry>

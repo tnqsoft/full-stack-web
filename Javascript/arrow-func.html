@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Arrow Function</title>
+</head>
+<body>
+    <h1>Javascript - Arrow Function</h1>
+    <script>
+        // https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/
+        const list = [
+            {
+                id: 1,
+                value: 'Test 1'
+            },
+            {
+                id: 2,
+                value: 'Test 2'
+            },
+            {
+                id: 3,
+                value: 'Test 3'
+            }
+        ];
+
+        // ES5
+        var multiplyES5 = function(x, y) {
+            return x * y;
+        };
+
+        parent.console.log(multiplyES5(2, 3));
+
+        // ES6
+        const multiplyES6 = (x, y) => { return x * y };
+
+        parent.console.log(multiplyES6(3, 3));
+
+        // var test = list.map(function(item) {
+        //     return item.value;
+        // });
+        let test = list.map(item => item.value);
+        parent.console.log(test.join(','));
+    </script>
+</body>
+</html>

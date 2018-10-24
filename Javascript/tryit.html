@@ -93,7 +93,7 @@
 
 <script>
     function displayLog(str) {
-        if (typeof str === 'string') {
+        if (typeof str !== 'object' && typeof str !== 'array') {
             $('#logDisplay').append('<p>' + str + '</p>');
         }
     }
