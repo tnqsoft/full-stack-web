@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - OOP ES5</title>
+</head>
+<body>
+    <h1>Javascript - OOP ES5</h1>
+    <script>
+        // function Personal(name) {
+        //     var _name = name;
+        //     this.setName = function (name) {
+        //         _name = name;
+        //     };
+        //     this.getName = function () {
+        //         return _name;
+        //     };
+        //     return this;
+        // }
+        // var student = new Personal('Tuan');
+        // parent.console.log(student.getName());
+        // student.setName('Test');
+        // parent.console.log(student.getName());
+
+        var Personal = function(name) {
+            this.name = name;
+        };
+        Personal.prototype = {
+            setName: function (name) {
+                this.name = name;
+            },
+            getName: function() {
+                return this.name;
+            }
+        };
+        var student = new Personal('Tuan');
+        parent.console.log(student.getName());
+        student.setName('Test');
+        parent.console.log(student.getName());
+
+        // Extends
+        var Staff = function(name){
+            Personal.apply(this, [name]);
+        };
+        Staff.prototype = Object.create(Personal.prototype);
+        Staff.prototype.constructor = Personal;
+        var staff1 = new Staff('Staff 1');
+        parent.console.log(staff1.getName());
+        staff1.setName('Test Staff 1');
+        parent.console.log(staff1.getName());
+    </script>
+</body>
+</html>

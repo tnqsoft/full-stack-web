@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Observable RxJS</title>
+</head>
+<body>
+    <h1>Javascript - Observable RxJS</h1>
+    <script src="libs/rx.all.min.js"></script>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe
+        // http://reactivex.io/
+        // https://github.com/Reactive-Extensions/RxJS
+        // https://github.com/Reactive-Extensions/RxJS/tree/master/examples
+        // http://reactivex.io/rxjs/manual/tutorial.html
+        const source = Rx.Observable.create(observer => {
+            let list = [
+                {
+                    id: 1,
+                    value: 'Test 1'
+                },
+                {
+                    id: 2,
+                    value: 'Test 2'
+                },
+                {
+                    id: 3,
+                    value: 'Test 3'
+                },
+            ];
+            setTimeout(() => {
+                observer.onNext(list);
+                observer.onCompleted();
+            }, 1000);
+        });
+
+        const subscription = source
+            .map(list => list.map(item => item.id))
+            .filter(list => list.length > 0)
+            .subscribe(
+            value => parent.console.log(`Next: ${value}`),
+            error => parent.console.log(`Error: ${error}`),
+            () => parent.console.log("Completed!")
+        );
+
+        // const source = Rx.Observable.create(observer => {
+        //     setTimeout(() => observer.onNext("yingray say hi!"), 2000);
+        //     setTimeout(() => observer.onNext("frank say hi!"), 1000);
+        //     // observer.onCompleted();
+        // });
+        //
+        // const subscription = source.subscribe(
+        //     value => console.log(`Next: ${value}`),
+        //     error => console.log(`Error: ${error}`),
+        //     () => console.log("Completed!")
+        // );
+    </script>
+</body>
+</html>

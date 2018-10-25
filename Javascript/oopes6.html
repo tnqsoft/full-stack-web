@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - OOP ES6</title>
+</head>
+<body>
+    <h1>Javascript - OOP ES6</h1>
+    <script>
+        class Personal {
+            constructor(name) {
+                this.name = name;
+            }
+
+            setName(name) {
+                this.name = name;
+            }
+
+            getName() {
+                return this.name;
+            }
+        };
+
+        class Staff extends Personal {
+            constructor(name, className) {
+                super(name);
+                this.className = className;
+            }
+
+            getName() {
+                return super.getName() + ' - ' + this.className;
+            }
+        };
+
+        var student = new Personal('Tuan');
+        parent.console.log(student.getName());
+        student.setName('Test');
+        parent.console.log(student.getName());
+
+        // Extends
+        var staff1 = new Staff('Staff 1', 'CNTT');
+        parent.console.log(staff1.getName());
+        staff1.setName('Test Staff 1');
+        parent.console.log(staff1.getName());
+    </script>
+</body>
+</html>

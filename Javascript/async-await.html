@@ -8,55 +8,26 @@
     <h1>Javascript - Async/await</h1>
     <script>
         // https://javascript.info/async-await
-        const list = [
-            {
-                id: 1,
-                value: 'Test 1'
-            },
-            {
-                id: 2,
-                value: 'Test 2'
-            },
-            {
-                id: 3,
-                value: 'Test 3'
-            }
-        ];
 
-        // every: Checks if every element in an array pass a test
-        let testEvery = list.every(item => item.id > 2);
-        parent.console.log('testEvery:' + (testEvery?'true':'false'));
-        parent.console.log('---------------------------------------');
+        // The word “async” before a function means one simple thing: a function always returns a promise.
+        // async function f() {
+        //     return 1;
+        // }
+        //
+        // f().then(alert); // 1
 
-        // filter: Creates a new array with every element in an array that pass a test
-        let testFilter = list.filter(item => item.id >= 2);
-        parent.console.log('testFilter:' + JSON.stringify(testFilter));
-        parent.console.log('---------------------------------------');
+        async function f() {
 
-        // find: Returns the value of the first element in an array that pass a test
-        let testFind = list.find(item => item.id === 2);
-        parent.console.log('testFind:' + JSON.stringify(testFind));
-        parent.console.log('---------------------------------------');
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve("done!"), 1000)
+            });
 
-        // findIndex: Returns the index of the first element in an array that pass a test
-        let testFindIndex = list.findIndex(item => item.id === 2);
-        parent.console.log('testFindIndex:' + JSON.stringify(testFindIndex));
-        parent.console.log('---------------------------------------');
+            let result = await promise; // wait till the promise resolves (*)
 
-        // forEach: Calls a function for each array element
-        parent.console.log('testForEach:');
-        list.forEach(item => {
-            parent.console.log(item.id + '-' + item.value);
-        });
-        parent.console.log('---------------------------------------');
+            parent.console.log(result); // "done!"
+        }
 
-        // map: Creates a new array with the result of calling a function for each array element
-        let testMap = list.map(item => item.value);
-        parent.console.log('testMap:' + JSON.stringify(testMap));
-        parent.console.log('---------------------------------------');
-
-        // pop(): Removes the last element of an array, and returns that element
-        // push(): Adds new elements to the end of an array, and returns the new length
+        f();
     </script>
 </body>
 </html>
