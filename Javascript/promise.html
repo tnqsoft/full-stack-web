@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Promise</title>
+</head>
+<body>
+    <h1>Javascript - Promise</h1>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+        // function test() {
+        //     setTimeout(function() {
+        //         parent.console.log('1111111111111');
+        //     }, 1000);
+        //     parent.console.log('222222222');
+        // }
+        // test();
+
+        // function test(callback1) {
+        //     setTimeout(function() {
+        //         parent.console.log('1111111111111');
+        //         callback1();
+        //     }, 1000);
+        // }
+        // test(() => {
+        //     parent.console.log('222222222');
+        // });
+
+        // Promise
+        // function test() {
+        //     let promise1 = new Promise(function(resolve, reject) {
+        //         setTimeout(function() {
+        //             resolve('1111111111111');
+        //         }, 1000);
+        //     });
+        //     promise1.then((response) => {
+        //         parent.console.log(response);
+        //         parent.console.log('222222222');
+        //     });
+        // }
+        // test();
+
+        // Promise.all(iterable)
+        // Promise.race(iterable)
+        // Promise.reject(reason)
+        // Promise.resolve(value)
+        //
+        // Promise.prototype.catch(onRejected)
+        // Promise.prototype.then(onFulfilled, onRejected)
+        // Promise.prototype.finally(onFinally)
+        // function test(check) {
+        //     let promise1 = new Promise(function(resolve, reject) {
+        //         setTimeout(function() {
+        //             if (check) {
+        //                 resolve('1111111111111');
+        //             } else {
+        //                 reject('Loi roi nha');
+        //             }
+        //         }, 1000);
+        //     });
+        //     promise1.then((response) => {
+        //         parent.console.log(response);
+        //         parent.console.log('222222222');
+        //     }, (error) => {
+        //         parent.console.log('Promise Else');
+        //         parent.console.log(error);
+        //     }).catch((error) => {
+        //         parent.console.log('Promise Catch');
+        //         parent.console.log(error);
+        //     }).finally(() => {
+        //         parent.console.log('Finished call api');
+        //     });
+        // }
+        // test(true);
+
+        var promise1 = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                resolve('1111111111111');
+            }, 1000);
+        });
+        var promise2 = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                resolve('2222222222222');
+            }, 500);
+        });
+        Promise.all([promise1, promise2]).then(function(value) {
+            parent.console.log(JSON.stringify(value));
+            // Both resolve, but promise2 is faster
+        });
+
+        // var promise1 = new Promise(function(resolve, reject) {
+        //     setTimeout(function() {
+        //         resolve('1111111111111');
+        //     }, 1000);
+        // });
+        // var promise2 = new Promise(function(resolve, reject) {
+        //     setTimeout(function() {
+        //         resolve('2222222222222');
+        //     }, 500);
+        // });
+        // Promise.race([promise1, promise2]).then(function(value) {
+        //     parent.console.log(value);
+        //     // Both resolve, but promise2 is faster
+        // });
+    </script>
+</body>
+</html>
